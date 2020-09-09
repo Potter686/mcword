@@ -5,7 +5,7 @@ import java.util.Date;
 
 import com.example.srping_mc.entity.Article;
 import com.example.srping_mc.repository.ArticleRepository;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.None;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
