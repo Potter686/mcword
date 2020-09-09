@@ -14,8 +14,11 @@ Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
 Vue.use(mavonEditor);
 
+import Vditor from 'vditor'
+
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app');
+

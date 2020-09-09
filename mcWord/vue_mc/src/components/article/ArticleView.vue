@@ -166,6 +166,4 @@ body > .el-container {
   line-height: 320px;
 }
 
-#mavon-editor_test {
-}
 </style>

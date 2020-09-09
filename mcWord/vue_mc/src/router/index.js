@@ -15,6 +15,7 @@ import ArticleEditor from "../components/article/ArticleEditor";
 import ArticleView from "../components/article/ArticleView";
 import ArticleShow from "../components/article/ArticleShow";
 
+import test from "../components/article/test"
 
 Vue.use(VueRouter);
 
@@ -90,7 +91,12 @@ Vue.use(VueRouter);
             path:"/ArticleShow",
             name:"ArticleShow",
             component:ArticleShow
-        }
+        },
+        {
+          path:"/test",
+          name:"test",
+          component:test
+      },
 
 
         // {
