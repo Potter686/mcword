@@ -10,21 +10,18 @@
       active-text-color="red"
       style="min-width: 1300px"
     >
-      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name" @click="loding()">{{ item.navItem }}</el-menu-item>
+      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">{{ item.navItem }}</el-menu-item>
       <a href="#nowhere" style="color: #222;float: right;padding: 20px;">更多功能</a>
       <i class="el-icon-menu" style="float:right;font-size: 45px;color: #222;padding-top: 8px"></i>
       <span
         style="position: absolute;padding-top: 1vh;right: 49%;font-size: 30px;font-weight: bold"
       >乎知</span>
     </el-menu>
-    <p v-if="loading" v-loading="loading"></p>
       </div>
   </div>
 </template>
 
 <script>
-
-
 
 export default {
   name: "NavMenu",
