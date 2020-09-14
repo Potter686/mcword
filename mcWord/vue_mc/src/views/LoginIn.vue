@@ -30,6 +30,9 @@
                 const _this = this;
                 const serverUrl = this.$serverUrl.serverUrl;
                 console.log(_this.loginForm);
+
+            
+
                 if(_this.loginForm.userName.length == 0 && _this.loginForm.password.length == 0  ){
                     this.$message({
                         showClose: true,
@@ -52,18 +55,30 @@
                     });
                 }
                 else {
-                    this.$axios.post(serverUrl + "user/loginDetection", _this.loginForm).then(function (resp) {
-                        // console.log(resp.data);
-                        if (resp.data) {
-                            _this.$router.push("/UserManager")
-                        } else {
-                            _this.$message({
-                                showClose: true,
-                                message: '账号密码错误',
-                                type: 'error'
-                            });
+
+                    this.$axios.post(serverUrl + "user/loginDetection", _this.loginForm).then(successResponse=>{
+
+                        if (successResponse.data){
+                             _this.$store.commit('login', _this.loginForm)
+                            var path = this.$route.query.redirect
+                            this.$router.replace({path: path === '/' || path === undefined ? '/ArticleView' : path})
                         }
+                        
                     })
+
+
+                    // this.$axios.post(serverUrl + "user/loginDetection", _this.loginForm).then(function (resp) {
+                    //     // console.log(resp.data);
+                    //     if (resp.data) {
+                    //         _this.$router.push("/UserManager")
+                    //     } else {
+                    //         _this.$message({
+                    //             showClose: true,
+                    //             message: '账号密码错误',
+                    //             type: 'error'
+                    //         });
+                    //     }
+                    // })
                 }
 
             },

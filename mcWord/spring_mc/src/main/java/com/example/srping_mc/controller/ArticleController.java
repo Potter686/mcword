@@ -29,7 +29,7 @@ public class ArticleController {
         article.setArticleDate(dateFormat.format(dateNow));
 
         //暂时设定作者
-        article.setArticleId(123L);
+        article.setUserId(123L);
         Article article1 = articleRepository.save(article);
         boolean result = StringUtils.isEmpty(article1);
         if (!result){

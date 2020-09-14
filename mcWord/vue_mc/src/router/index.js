@@ -7,7 +7,7 @@ import AddUser from "../views/AddUser";
 import PageFour from "../views/PageFour";
 import Index from "../views/Index";
 import LoginIn from "../views/LoginIn";
-import NavMenu from '../components/common/NavMenu'
+import NavMenu from '../components/article/NavMenu'
 import Home from "../components/Home";
 import HomePage from "../components/HomePage";
 import BookIndex from "../components/Book/BookIndex";
@@ -16,11 +16,16 @@ import ArticleView from "../components/article/ArticleView";
 import ArticleShow from "../components/article/ArticleShow";
 
 import test from "../components/article/test"
+import UserInfo from "../views/UserInfo"
+import PersonalInfo from "../components/User/PersonalInfo"
+
+import test2 from "../components/test2"
 
 Vue.use(VueRouter);
 
   const routes = [
     {
+
       path: "/Home",
       show:true,
       name: "用户管理",
@@ -31,7 +36,11 @@ Vue.use(VueRouter);
         {
           path: "/UserManager",
           name: "查询",
-          component: UserManager
+          component: UserManager,
+          meta:{
+            requireAuth:true   //需要登录拦截
+          },
+
         },
         {
           path: "/AddUser",
@@ -53,8 +62,9 @@ Vue.use(VueRouter);
     //   component: UserUpdate
     // }
 
+    
 
-
+    
 
     {
       path: "/LoginIn",
@@ -66,6 +76,9 @@ Vue.use(VueRouter);
       name:"Home" ,
       component: Home,
       redirect:"/ArticleView",
+      meta:{
+        requireAuth:true   //需要登录拦截
+      },
       children:[
         {
           path: "/HomePage",
@@ -80,12 +93,14 @@ Vue.use(VueRouter);
         {
           path: "/ArticleEditor",
           name: "ArticleEditor",
-          component: ArticleEditor
+          component: ArticleEditor,
+          
         },
         {
           path: "/ArticleView",
           name: "ArticleView",
-          component: ArticleView
+          component: ArticleView,
+        
         },
         {
             path:"/ArticleShow",
@@ -93,10 +108,27 @@ Vue.use(VueRouter);
             component:ArticleShow
         },
         {
-          path:"/test",
-          name:"test",
-          component:test
+
+          path:"/UserInfo",
+          name :"UserInfo",
+          component:UserInfo
+        },
+        {
+          path:"/test2",
+          name:"test2",
+          component:test2,
+          children:[
+            {
+              path:"/PersonalInfo",
+              component:PersonalInfo,
+              name:"PersonalInfo"
+            }
+
+
+          ]
       },
+        
+        
 
 
         // {

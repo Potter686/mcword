@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <div v-for="(article,index) in articles" :key="index">
+  <div  style="height :92vh;"  >
+    <el-scrollbar style="height:100% ;">
+    <div v-for="(article,index) in articles" :key="index" style="background-color: #f6f6f6;" > 
       <div v-for="(article_data,index1) in article" :key="index1">
-        <el-col>
+        <el-col style="background-color: #f6f6f6">
           <el-card
             shadow="hover"
             style="cursor:pointer; text-align: left;width: 60%;margin: 30px auto 0 auto"
@@ -29,7 +30,7 @@
       </div>
     </div>
 
-    <div id="el-alert_test">
+    <div id="el-alert_test" style="background-color: #f6f6f6">
       <div v-if="noMore" style="text-align: center">
         <p style="color:#ff8c00">我也是有底线的~</p>
       </div>
@@ -38,6 +39,7 @@
         <span></span>
       </p>
     </div>
+    </el-scrollbar>
   </div>
 </template>
 
@@ -126,7 +128,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style  scoped>
 #el-alert_test {
   margin: auto;
   background-color: #ffffff;
@@ -166,4 +168,11 @@ body > .el-container {
   line-height: 320px;
 }
 
+
+
+/* .el-scrollbar__wrap
+{
+  overflow-x: hidden;
+} */
 </style>
+

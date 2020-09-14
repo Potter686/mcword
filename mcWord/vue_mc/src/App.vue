@@ -1,6 +1,6 @@
 <template>
 
-<div id="app">
+<div id="app" >
   <router-view v-if="isRouterAlive"></router-view>
 </div>
 </template>
@@ -28,6 +28,9 @@
 </script>
 
 <style>
+body{
+  margin: 0px;
+}
   .el-header {
     background-color: #B3C0D1;
     color: #333;

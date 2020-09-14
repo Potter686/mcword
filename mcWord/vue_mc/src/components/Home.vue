@@ -1,15 +1,17 @@
 <template>
     <div>
-        <nav-menu></nav-menu>
+        <NavMenu></NavMenu>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import NavMenu from './common/NavMenu'
+    import NavMenu from '../components/article/NavMenu';
+
     export default {
         name: 'Home',
-        components: {NavMenu}
+        components: {NavMenu},
+
     }
 </script>
 
